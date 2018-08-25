@@ -121,7 +121,7 @@ limitations under the License.
 
 // Only float, int32, and bool are supported.
 #define TF_CALL_float(m) m(float)
-#define TF_CALL_double(m)
+#define TF_CALL_double(m) m(double)
 #define TF_CALL_int32(m) m(::tensorflow::int32)
 #define TF_CALL_uint32(m)
 #define TF_CALL_uint8(m)
@@ -131,7 +131,7 @@ limitations under the License.
 #define TF_CALL_string(m)
 #define TF_CALL_resource(m)
 #define TF_CALL_variant(m)
-#define TF_CALL_complex64(m)
+#define TF_CALL_complex64(m) m(::tensorflow::complex64)
 #define TF_CALL_int64(m)
 #define TF_CALL_uint64(m)
 #define TF_CALL_bool(m) m(bool)

@@ -5076,6 +5076,19 @@ filegroup(
     ),
     visibility = ["//visibility:public"],
 )
+
+filegroup(
+    name = "android_msc_project_ops",
+    srcs = glob([
+        "cwise_op_cos.*",
+        "fft_ops.*",
+        "listdiff_op.*",
+        "cwise_op_complex.*",
+        "cwise_op_real.*",
+        "cwise_op_sin.*",
+    ]),
+)
+
 # LINT.ThenChange(//tensorflow/contrib/makefile/tf_op_files.txt)
 
 cc_library(
@@ -5084,6 +5097,7 @@ cc_library(
         "//tensorflow:android": [
             "//tensorflow/core/kernels:android_core_ops",
             "//tensorflow/core/kernels:android_extended_ops",
+            "//tensorflow/core/kernels:android_msc_project_ops",
         ],
         "//conditions:default": [],
     }),
@@ -5107,6 +5121,7 @@ cc_library(
         "@fft2d",
         "@gemmlowp",
         "@protobuf_archive//:protobuf",
+        "//tensorflow/contrib/lite/kernels:builtin_ops",
     ],
     alwayslink = 1,
 )
